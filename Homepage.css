@@ -1,4 +1,13 @@
 h1{
- background: blue;
+ color: green;
  border: 5px;
+ position: center
+}
+h2{
+ color: green;
+ position: center;
+}
+$index{
+ border-width: 5px;
+ position: center;
 }
