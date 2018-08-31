@@ -9,8 +9,8 @@
    <p id="answer"></p>
    <script>
     const solve = (function) =>{
-     let sum=0;
-     const fun= function.split('+','-','*','/');
+     var sum=0;
+     var fun= function.split('+','-','*','/');
      if(fun[1]){
       case '+':
        sum= Number(fun[0])+Number(fun[2]);
@@ -34,9 +34,9 @@
      }
     }
  function ask(){
-    let query= prompt('Enter your statement','0')
+    var query= prompt('Enter your statement','0')
     if(query!=null){
-     document.getElementByID("answer").innerHTML= solve(query);
+     document.getElementByID("answer").innerHTML= `${solve(query)}`;
     }
  }
    </script>
