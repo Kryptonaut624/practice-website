@@ -10,26 +10,26 @@
    <script>
     const solve = (function) =>{
      var sum=0;
-     var fun= function.split('+','-','*','/');
-     if(fun[1]){
-      case '+':
+     var fun= function.split("+","-","*","/");
+     switch(fun[1]){
+      case "+":
        sum= Number(fun[0])+Number(fun[2]);
        return sum;
        break;
-      case '-':
+      case "-":
        sum= Number(fun[0])-Number(fun[2]);
        return sum;
        break;
-      case '*':
+      case "*":
        sum= Number(fun[0])*Number(fun[2]);
        return sum;
        break;
-      case '/':
+      case "/":
        sum= Number(fun[0])/Number(fun[2]);
        return sum;
        break;
       default:
-       return 'This is an invalid statement';
+       return "This is an invalid statement";
        break;
      }
     }
