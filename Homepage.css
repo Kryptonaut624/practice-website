@@ -1,13 +1,10 @@
-h1{
- color: green;
+body{
+ background: #95CFF6;
+}
+p{
  border: 5px;
- position: center
-}
-h2{
- color: green;
  position: center;
 }
-$index{
- border-width: 5px;
- position: center;
+#answer{
+ color: #44EC55;
 }
