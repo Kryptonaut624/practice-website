@@ -34,9 +34,11 @@
      }
     }
  function ask(){
-    var query= prompt('Enter your statement','0')
+    var query= prompt('Enter your statement','0');
     if(query!=null){
      document.getElementByID("answer").innerHTML= `${solve(query)}`;
+    }else{
+     document.getElementByID("answer").innerHTML= "The calculator is probably buggy right now. I should fix that...";
     }
  }
    </script>
