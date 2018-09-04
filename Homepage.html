@@ -9,6 +9,8 @@
      <input id="statement">
      <button id="submit" type="button" onclick="ask();">Calculate</button>
     </div>
+   </form>
+   <p id="answer"></p>
    <script>
     const solve = (function) =>{
      var sum=0;
@@ -38,9 +40,9 @@
  function ask(){
     var query= document.getElementID("statement");
     if(query!=null){
-     alert(solve(query));
+     document.getElementID("answer")=solve(query);
     }else{
-     alert("The calculator is probably buggy right now. I should fix that...");
+     document.getElementID("answer")="The calculator is probably buggy right now. I should fix that...";
     }
  }
   </body>
