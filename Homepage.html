@@ -39,11 +39,13 @@
     }
  function ask(){
     var query= document.getElementID("statement");
+    var num;
     if(query!=null){
-     document.getElementID("answer")=solve(query);
+     num=solve(query);
     }else{
-     document.getElementID("answer")="The calculator is probably buggy right now. I should fix that...";
+     num="My program is buggy. I shoudl fix that...";
     }
+    document.getElementID("answer")= num;
  }
   </body>
  </html>
