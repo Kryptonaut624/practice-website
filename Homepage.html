@@ -12,7 +12,7 @@
    <script>
     const solve = (function) =>{
      var sum=0;
-     var fun= function.split("+","-","*","/");
+     var fun= function.split(" ");
      switch(fun[1]){
       case "+":
        sum= Number(fun[0])+Number(fun[2]);
@@ -35,7 +35,6 @@
        break;
      }
     }
-    </script>
  function ask(){
     var query= document.getElementID("statement");
     if(query!=null){
