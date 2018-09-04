@@ -4,9 +4,11 @@
    <title>Calculator</title>
   </head>
   <body>
-   <p>You should probably click this button...</p>
-   <button id="calculate" onclick="ask()"> Press me </button>
-   <p id="answer"></p>
+   <form id="calculator">
+    <div>
+     <input id="statement" type:"text"/>
+     <input id="submit" type="submit" onclick="ask();"/>
+    </div>
    <script>
     const solve = (function) =>{
      var sum=0;
@@ -34,11 +36,11 @@
      }
     }
  function ask(){
-    var query= prompt("Enter your statement","0");
+    var query= document.getElementID("statement");
     if(query!=null){
-     document.getElementByID("calculate").innerHTML= `${solve(query)}`;
+     alert(solve(query));
     }else{
-     document.getElementByID("calculate").innerHTML= "The calculator is probably buggy right now. I should fix that...";
+     alert("The calculator is probably buggy right now. I should fix that...");
     }
  }
    </script>
