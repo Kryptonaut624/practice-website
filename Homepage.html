@@ -38,14 +38,14 @@
      }
     }
  function ask(){
-    var query= document.getElementID("statement");
+    var query= document.getElementID("statement").innerHTML;
     var num;
     if(query!=null){
      num=solve(query);
     }else{
      num="My program is buggy. I should fix that...";
     }
-    document.getElementID("answer")= num;
+    document.getElementID("answer").innerHTML= num;
  }
   </body>
  </html>
