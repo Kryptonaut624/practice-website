@@ -4,13 +4,6 @@
    <title>Calculator</title>
   </head>
   <body>
-   <form id="calculator">
-    <div>
-     <input id="statement">
-     <button id="submit" type="button" onclick="ask();">Calculate</button>
-    </div>
-   </form>
-   <p id="answer"></p>
    <script>
     const solve = (fun) =>{
      var sum=0;
@@ -47,5 +40,12 @@
     }
     document.getElementID("answer").innerHTML= num;
  }
+   <form id="calculator">
+    <div>
+     <input id="statement">
+     <button id="submit" type="button" onclick="ask();">Calculate</button>
+    </div>
+   </form>
+   <p id="answer"></p>
   </body>
  </html>
