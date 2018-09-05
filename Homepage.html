@@ -31,15 +31,13 @@
      }
     }
  function ask(){
-    var query= document.getElementID("statement").innerHTML;
-    var num;
-    if(query!=null){
-     num=solve(query);
-    }else{
-     num="My program is buggy. I should fix that...";
-    }
-    document.getElementID("answer").innerHTML= num;
-    return false;
+  var num=solve(document.getElementID("statement").innerHTML);
+  if(!num.equals("This is an invalid statement")){
+   document.getElementID("answer").innerHTML= num;
+   return "Solved";
+  }
+  else
+   return "Invalid format";
  }
    </script>
    <form name="equate" onsubmit= "return ask()" method="solve">
