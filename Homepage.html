@@ -39,13 +39,12 @@
      num="My program is buggy. I should fix that...";
     }
     document.getElementID("answer").innerHTML= num;
+    return false;
  }
    </script>
-   <form id="calculator">
-    <div>
+   <form name="equate" onsubmit= "return ask()" method="solve">
      <input id="statement">
      <button id="submit" type="button" onclick="ask();">Calculate</button>
-    </div>
    </form>
    <p id="answer"></p>
   </body>
