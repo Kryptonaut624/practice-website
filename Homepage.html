@@ -12,9 +12,9 @@
    </form>
    <p id="answer"></p>
    <script>
-    const solve = (function) =>{
+    const solve = (fun) =>{
      var sum=0;
-     var fun= function.split(" ");
+     fun.split(" ");
      switch(fun[1]){
       case "+":
        sum= Number(fun[0])+Number(fun[2]);
@@ -43,7 +43,7 @@
     if(query!=null){
      num=solve(query);
     }else{
-     num="My program is buggy. I shoudl fix that...";
+     num="My program is buggy. I should fix that...";
     }
     document.getElementID("answer")= num;
  }
