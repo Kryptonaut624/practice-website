@@ -1,4 +1,4 @@
-function calculate=(val)=>{
+function calc=(val)=>{
   const eq= false;
   const equation;
   const find;
