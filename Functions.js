@@ -1,4 +1,4 @@
-function calc=(val)=>{
+export function calc=(val)=>{
   const eq= false;
   const equation;
   const find;
