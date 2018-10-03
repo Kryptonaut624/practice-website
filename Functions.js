@@ -20,5 +20,6 @@ export function calc=(val)=>{
   }
   if(eq===false){
     answer=val.valueOf();
+    responseField.innerHTML=answer;
   }
 }
