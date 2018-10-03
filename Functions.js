@@ -1,5 +1,4 @@
-calculate.on('click', event =>{
-  const val= input.value();
+function calculate=(val)=>{
   const eq= false;
   const equation;
   const find;
@@ -16,7 +15,7 @@ calculate.on('click', event =>{
           }
         }
       }
-      str=val.split('=');
+      equation=val.split('=');
     }//end of if statement
   }
   if(eq===false){
