@@ -1,8 +1,8 @@
-const inputField= document.querySelector('#input');
-const calculate= document.querySelector('#calculate');
-const responseField= document.querySelector('#responseField');
+export const inputField= document.querySelector('#input');
+export const calculate= document.querySelector('#calculate');
+export const responseField= document.querySelector('#responseField');
 
-const calc=()=>{
+export const calc=()=>{
   const eq= false;
   const equation;
   const find;
