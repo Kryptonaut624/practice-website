@@ -10,7 +10,8 @@ export const calc=()=>{
   const alph='abcdefghijklmnopqrstuvwxyz';
   const terms;//in-order array of all terms and constants in equation
   const operations;//in-order array of all math operations in equation
-  const answer;//final answer
+  const neg=false;//determines if the first term is pos or neg
+  const answer=0;//final answer
   //finds if is equation, then finds variable
   for(let i=0;i<inputField.length;i++){
     if(inputField.indexOf(i)==='='){
@@ -41,8 +42,28 @@ export const calc=()=>{
          }
       }
     }
-    const tempArr;
-    for(n=0;n<equation.length;n++){
+    const cLength=1;//length of constants
+    for(let n=0;n<equation.length;n++){
+      for(let l=0;l<equation[n].length;l++){
+        if(equation[n].substring(l,l+1)==='-'||equation[n].substring(l,l+1)==='+'||equation[n].substring(l,l+1)==='*'||equation[n].substring(l,l+1)==='/'||equation[n].substring(l,l+1)==='^'){
+          operations.push(equation[n].substring(l,l+1));
+          if(l===0&&equation[n].substring(l,l+1)==='-'){
+            neg=true;
+          }
+        }
+        else if(equation[n].substring(l+1,l+2)==='-'||equation[n].substring(l+1,l+2)==='+'||equation[n].substring(l+1,l+2)==='*'||equation[n].substring(l+1,l+2)==='/'||equation[n].substring(l+1,l+2)==='^'{
+          terms.push(equation[n].substring(l,l+cLength));
+          cLength=1;
+        }
+        else{
+          cLength++;
+        }
+      }
+    }
+    for(let n=0;n<operations.length;n++){
+      if(neg===true){
+        
+      }
     }
   }
 }
