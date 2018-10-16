@@ -60,9 +60,30 @@ export const calc=()=>{
         }
       }
     }
+    answer=Number(terms[0]);
     for(let n=0;n<operations.length;n++){
       if(neg===true){
-        
+        terms[n]="-"+terms[n];
+        answer=Number(terms[0])
+      }
+      else{
+        if(operations[n]==='+'){
+          answer+=Number(terms[n]);
+        }
+        if(operations[n]==='-'){
+          answer-=Number(terms[n]);
+        }
+        if(operations[n]==='*'){
+          answer*=Number(terms[n]);
+        }
+        if(operations[n]==='/'){
+          answer/=Number(terms[n]);
+        }
+        if(operations[n]==='^'){
+          const ex= (Number(terms[n]).toExponential(terms[n+1])).toString();
+          terms[n]=ex;
+          terms[n+1].pop()
+        }
       }
     }
   }
