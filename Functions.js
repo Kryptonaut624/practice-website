@@ -8,8 +8,8 @@ export const calc=()=>{
   const find;//variable
   const varLocation;//variable location in equation
   const alph='abcdefghijklmnopqrstuvwxyz';
-  const terms;//in-order array of all terms and constants in equation
-  const operations;//in-order array of all math operations in equation
+  const terms= new Array(2);//in-order array of all terms and constants in equation
+  const operations= new Array(2);//in-order array of all math operations in equation
   const neg=false;//determines if the first term is pos or neg
   const answer=0;//final answer
   //finds if is equation, then finds variable
@@ -46,13 +46,13 @@ export const calc=()=>{
     for(let n=0;n<equation.length;n++){
       for(let l=0;l<equation[n].length;l++){
         if(equation[n].substring(l,l+1)==='-'||equation[n].substring(l,l+1)==='+'||equation[n].substring(l,l+1)==='*'||equation[n].substring(l,l+1)==='/'||equation[n].substring(l,l+1)==='^'){
-          operations.push(equation[n].substring(l,l+1));
+          operations[n].push(equation[n].substring(l,l+1));
           if(l===0&&equation[n].substring(l,l+1)==='-'){
             neg=true;
           }
         }
         else if(equation[n].substring(l+1,l+2)==='-'||equation[n].substring(l+1,l+2)==='+'||equation[n].substring(l+1,l+2)==='*'||equation[n].substring(l+1,l+2)==='/'||equation[n].substring(l+1,l+2)==='^'{
-          terms.push(equation[n].substring(l,l+cLength));
+          terms[n].push(equation[n].substring(l,l+cLength));
           cLength=1;
         }
         else{
@@ -61,28 +61,28 @@ export const calc=()=>{
       }
     }
     answer=Number(terms[0]);
-    for(let n=0;n<operations.length;n++){
-      if(neg===true){
-        terms[n]="-"+terms[n];
-        answer=Number(terms[0])
-      }
-      else{
-        if(operations[n]==='+'){
-          answer+=Number(terms[n]);
+    if(neg===true){
+      terms[0]="-"+terms[0];
+      answer=Number(terms[0]);
+    }
+    for(let i=0;i<operations.length;i++{
+      for(let n=0;n<operations[i].length;n++){
+        if(operations[i][n]==='+'){
+          answer+=Number(terms[i][n]);
         }
-        if(operations[n]==='-'){
-          answer-=Number(terms[n]);
+        if(operations[i][n]==='-'){
+           answer-=Number(terms[i][n]);
         }
-        if(operations[n]==='*'){
-          answer*=Number(terms[n]);
+        if(operations[i][n]==='*'){
+           answer*=Number(terms[i][n]);
         }
-        if(operations[n]==='/'){
-          answer/=Number(terms[n]);
+        if(operations[i][n]==='/'){
+         answer/=Number(terms[i][n]);
         }
-        if(operations[n]==='^'){
-          const ex= (Number(terms[n]).toExponential(terms[n+1])).toString();
-          terms[n]=ex;
-          terms[n+1].pop()
+        if(operations[i][n]==='^'){
+         const ex= (Number(terms[i][n]).toExponential(terms[i][n+1])).toString();
+         terms[i][n]=ex;
+         terms[i][n+1].pop();
         }
       }
     }
