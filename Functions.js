@@ -6,7 +6,8 @@ export const calc=()=>{
   const eq= false;//determines if expression is an equation
   const equation;//array of both expressions on either side of '='
   const find;//variable
-  const varLocation;//variable location in equation
+  const varTerm;//variable term location
+  const varIndex;//variable location in equation
   const alph='abcdefghijklmnopqrstuvwxyz';
   const terms= new Array(2);//in-order array of all terms and constants in equation
   const operations= new Array(2);//in-order array of all math operations in equation
@@ -38,7 +39,8 @@ export const calc=()=>{
     for(let n=0;n<equation.length;n++){
       for(let l=0;l<equation[n].length;l++){
          if(equation[n].substring(l,l+1)===find){
-            varLocation=equation[n].indexOf(equation[n].substring(l,l+1));
+            varTerm=n;
+            varIndex=equation[n].indexOf(equation[n].substring(l,l+1));
          }
       }
     }
