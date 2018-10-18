@@ -1,4 +1,6 @@
 #responseField{
   border: 20px,
-  color: #FFFFFF
+  color: #FFFFFF,
+  margin: 0 auto,
+  text-align: center
 }
