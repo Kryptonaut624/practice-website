@@ -39,8 +39,8 @@ export const calc=()=>{
     for(let n=0;n<equation.length;n++){
       for(let l=0;l<equation[n].length;l++){
          if(equation[n].substring(l,l+1)===find){
-            varTerm=n;
-            varIndex=equation[n].indexOf(equation[n].substring(l,l+1));
+           varTerm=n;
+           varIndex=equation[n].indexOf(equation[n].substring(l,l+1));
          }
       }
     }
@@ -73,18 +73,18 @@ export const calc=()=>{
           answer+=Number(terms[i][n]);
         }
         if(operations[i][n]==='-'){
-           answer-=Number(terms[i][n]);
+          answer-=Number(terms[i][n]);
         }
         if(operations[i][n]==='*'){
-           answer*=Number(terms[i][n]);
+          answer*=Number(terms[i][n]);
         }
         if(operations[i][n]==='/'){
-         answer/=Number(terms[i][n]);
+          answer/=Number(terms[i][n]);
         }
         if(operations[i][n]==='^'){
-         const ex= (Number(terms[i][n]).toExponential(terms[i][n+1])).toString();
-         terms[i][n]=ex;
-         terms[i][n+1].pop();
+          const ex= (Number(terms[i][n]).toExponential(terms[i][n+1])).toString();
+          terms[i][n]=ex;
+          terms[i][n+1].pop();
         }
       }
     }
