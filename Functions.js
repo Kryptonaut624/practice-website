@@ -39,7 +39,7 @@ export const calc=()=>{
     for(let n=0;n<equation.length;n++){
       for(let l=0;l<equation[n].length;l++){
          if(equation[n].substring(l,l+1)===find){
-           varTerm=n;
+           varTerm=true;
            varIndex=equation[n].indexOf(equation[n].substring(l,l+1));
          }
       }
@@ -62,7 +62,12 @@ export const calc=()=>{
         }
       }
     }
-    answer=Number(terms[0]);
+    if(varTerm===false){
+      answer=equation[0].valueOf();
+    }
+    else{
+      answer=equation[1].valueOf();
+    }
     if(neg===true){
       terms[0]="-"+terms[0];
       answer=Number(terms[0]);
