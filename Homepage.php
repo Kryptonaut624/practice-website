@@ -6,10 +6,9 @@
     <title>Calculator</title>
   </div>
   <div>
-    <form id='state' autocomplete='off' method='post' action='Funcitons.js'>
-      <input id='input' type='text' value=''></input>
-      <input id='calculate' type='submit' value='Calculate'></input>
-    </form>
+  <?php
+    <form
+  ?>
   </div>
   <div id='responseField'>
   </div>
